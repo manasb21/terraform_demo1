@@ -28,10 +28,10 @@ pipeline {
             usernamePassword(credentialsId: 'aws_cred', passwordVariable: 'AWS_SECRET', usernameVariable: 'AWS_KEY'),
             usernamePassword(credentialsId: 'git', passwordVariable: 'REPO_PASS', usernameVariable: 'REPO_USER'),
           ]) {
-            sh 'rm -rf terraform_state_file'
+            sh 'rm -rf terraform_demo1'
             sh 'git clone https://github.com/manasb21/terraform_demo1.git'
             sh '''
-               cd terraform_state_file
+               cd terraform_demo1
                terraform init
                terraform apply -auto-approve -var access_key=${AWS_KEY} -var secret_key=${AWS_SECRET}
                git add terraform.tfstate
