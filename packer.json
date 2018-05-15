@@ -23,8 +23,12 @@
 		{
 			"type": "file",
 			"source": ".",
-			"destination": "ansible-playbook.yml"
+			"destination": "/home/ubuntu/node-app/"
 		}
+		{
+     			 "type": "ansible-local",
+     			 "playbook_file": "ansible-playbook.yml"
+   		}
 	],
 
 	"builders": [{
